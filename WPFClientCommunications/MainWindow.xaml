@@ -1,0 +1,15 @@
+﻿<Window x:Class="WPFClientCommunications.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFClientCommunications"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label BorderBrush="WhiteSmoke" Name="lblname" Content="" HorizontalAlignment="Left" Margin="350,138,0,0" VerticalAlignment="Top" Width="156"/>
+        <TextBox Name="txtname" HorizontalAlignment="Left" Height="23" Margin="184,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151"/>
+        <Button Content="Get the Response From the Server" HorizontalAlignment="Left" Margin="204,199,0,0" VerticalAlignment="Top" Width="236" Click="Button_Click"/>
+
+    </Grid>
+</Window>
