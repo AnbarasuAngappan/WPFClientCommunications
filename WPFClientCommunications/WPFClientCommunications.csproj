@@ -91,7 +91,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\HelloService\HelloService.wsdl" />
+    <None Include="Connected Services\HelloService\HelloService.wsdl">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\HelloService\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -104,7 +106,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

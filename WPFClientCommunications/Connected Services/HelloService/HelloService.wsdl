@@ -41,10 +41,20 @@
   <wsdl:message name="IHelloService_GetMessage_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMessageResponse" />
   </wsdl:message>
+  <wsdl:message name="IHelloService_calculateDays_InputMessage">
+    <wsdl:part name="parameters" element="tns:calculateDays" />
+  </wsdl:message>
+  <wsdl:message name="IHelloService_calculateDays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:calculateDaysResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHelloService">
     <wsdl:operation name="GetMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IHelloService/GetMessage" message="tns:IHelloService_GetMessage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHelloService/GetMessageResponse" message="tns:IHelloService_GetMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="calculateDays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHelloService/calculateDays" message="tns:IHelloService_calculateDays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHelloService/calculateDaysResponse" message="tns:IHelloService_calculateDays_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IHelloService" type="tns:IHelloService">
@@ -58,12 +68,30 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="calculateDays">
+      <soap:operation soapAction="http://tempuri.org/IHelloService/calculateDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IHelloService" type="tns:IHelloService">
     <wsp:PolicyReference URI="#NetTcpBinding_IHelloService_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="GetMessage">
       <soap12:operation soapAction="http://tempuri.org/IHelloService/GetMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateDays">
+      <soap12:operation soapAction="http://tempuri.org/IHelloService/calculateDays" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

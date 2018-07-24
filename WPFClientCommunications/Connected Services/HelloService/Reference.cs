@@ -20,6 +20,12 @@ namespace WPFClientCommunications.HelloService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/GetMessage", ReplyAction="http://tempuri.org/IHelloService/GetMessageResponse")]
         System.Threading.Tasks.Task<string> GetMessageAsync(string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/calculateDays", ReplyAction="http://tempuri.org/IHelloService/calculateDaysResponse")]
+        int calculateDays(int day, int Month, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/calculateDays", ReplyAction="http://tempuri.org/IHelloService/calculateDaysResponse")]
+        System.Threading.Tasks.Task<int> calculateDaysAsync(int day, int Month, int year);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace WPFClientCommunications.HelloService {
         
         public System.Threading.Tasks.Task<string> GetMessageAsync(string Name) {
             return base.Channel.GetMessageAsync(Name);
+        }
+        
+        public int calculateDays(int day, int Month, int year) {
+            return base.Channel.calculateDays(day, Month, year);
+        }
+        
+        public System.Threading.Tasks.Task<int> calculateDaysAsync(int day, int Month, int year) {
+            return base.Channel.calculateDaysAsync(day, Month, year);
         }
     }
 }
