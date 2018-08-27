@@ -4,6 +4,73 @@
              xmlns:local="clr-namespace:WPFClientCommunications"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="Button" x:Key="GelButton" >
+
          
+                <!--<Setter Property="Background" Value="Aqua"/>
+            </Style>
+            <Storyboard x:Key="myStoryBoard" >
+                <ColorAnimation Storyboard.TargetProperty="(TextBox.Background)" 
+                        From="Transparent" To="Green" Duration="0:0:0.5" AutoReverse="True" RepeatBehavior="1x"/>
+            </Storyboard>-->
+            
+            <!--<Setter Property="Margin" Value="10"/>
+                <Setter Property="BorderBrush" Value="Red"/>
+                <Setter Property="FontFamily" Value="Monotype Corsiva"/>
+                <Setter Property="FontSize" Value="20"/>-->
+            
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="DarkBlue" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="35" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="Calibri" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="LightBlue" BorderThickness="1" CornerRadius="15,0,15,0" x:Name="bd">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                    Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="red"/>
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+
+           
+                <!--<Setter Property="Background" Value="White" />
+                <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="0" Background="White" BorderBrush="#ccc" BorderThickness="0,1,1,0" >
+                                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>-->
+        
+
+            <!--<Style TargetType="Button" x:Key="TabButtonFirst" BasedOn="{StaticResource TabButton}">
+                <Setter Property="CornerRadius" Value="3,0,0,0" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="TabButtonLast" BasedOn="{StaticResource TabButton}">
+                <Setter Property="CornerRadius" Value="0,0,0,3" />
+            </Style>-->
+            
+
+        </Style>
     </Application.Resources>
 </Application>

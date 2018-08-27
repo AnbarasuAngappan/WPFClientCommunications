@@ -5,27 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFClientCommunications"
         mc:Ignorable="d"
-        Title="MainWindow" Height="394.703" Width="684.64">
+        Title="MainWindow" Height="250.703" Width="482.64">
+    <Window.Resources>
+
+        <Style  TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Aqua"/>
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Storyboard x:Key="myStoryBoard" >
+            <ColorAnimation Storyboard.TargetProperty="(TextBox.Background)" 
+                        From="Transparent" To="Green" Duration="0:0:0.5" AutoReverse="True" RepeatBehavior="1x"/>
+        </Storyboard>
+
+        <Style TargetType="Button" x:Key="TabButtonFirst">
+            <Setter Property="Background" Value="SeaGreen" />
+            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="3" Background="Aquamarine" BorderBrush="LightGray" BorderThickness="2" >
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="335"></ColumnDefinition>
+            <ColumnDefinition Width="253"></ColumnDefinition>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="178.864,62.325,0,0" Name="txtday" VerticalAlignment="Top" Width="120" />
-            <Label Content="Day" Height="28" HorizontalAlignment="Left" Margin="72.417,57.325,0,0" x:Name="lblName" VerticalAlignment="Top" Width="30.327" />
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="178.864,95.325,0,0" Name="txtMonth" VerticalAlignment="Top" Width="120" />
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="178.864,128.325,0,0" Name="txtYear" VerticalAlignment="Top" Width="120" />
-            <Label Content="Month" Height="28" HorizontalAlignment="Left" Margin="72.417,90.325,0,0" x:Name="lblMonth" VerticalAlignment="Top" Width="45.453" />
-            <Label Content="Year" Height="28" HorizontalAlignment="Left" Margin="72.417,123.325,0,0" x:Name="lblYear" VerticalAlignment="Top" Width="32.133" />
-            <Button x:Name="btnAgeCalculate" Content="Calculate Age" HorizontalAlignment="Left" Height="27" Margin="117,179,0,0" VerticalAlignment="Top" Width="98" Click="btnAgeCalculate_Click"/>
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="117,37.325,0,0" Name="txtday" VerticalAlignment="Top" Width="120" />
+            <Label Content="Day" Height="28" HorizontalAlignment="Left" Margin="54.417,32.325,0,0" x:Name="lblName" VerticalAlignment="Top" Width="30.327" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="117,72.375,0,0" Name="txtMonth" VerticalAlignment="Top" Width="120" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="117,105.375,0,0" Name="txtYear" VerticalAlignment="Top" Width="120" />
+            <Label Content="Month" Height="28" HorizontalAlignment="Left" Margin="54.417,67.375,0,0" x:Name="lblMonth" VerticalAlignment="Top" Width="45.453" />
+            <Label Content="Year" Height="28" HorizontalAlignment="Left" Margin="54.417,100.375,0,0" x:Name="lblYear" VerticalAlignment="Top" Width="32.133" />
+            <Button x:Name="btnAgeCalculate" Content="Calculate Age" HorizontalAlignment="Left" Height="27" Margin="94,143,0,0" Style="{StaticResource TabButtonFirst}" VerticalAlignment="Top" Width="98" Click="btnAgeCalculate_Click"/>
         </Grid>
-        
+
         <Grid Grid.Column="1">
-            <TextBox Name="txtName" HorizontalAlignment="Left" Height="26" Margin="92.646,72.87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151"/>
-            <Button Content="Get the Response From the Server" HorizontalAlignment="Left" Margin="63.097,123.773,0,0" VerticalAlignment="Top" Width="236" Click="Button_Click" Height="19.96"/>
+            <TextBox Name="txtName" HorizontalAlignment="Left" Height="26" Margin="57,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Button Content="Get the Response From the Server" HorizontalAlignment="Left" Margin="10,84.773,0,0" VerticalAlignment="Top" Style="{StaticResource TabButtonFirst}" Width="201.64" Click="Button_Click" Height="26.96"/>
+            <TextBlock Name="txtblockDescription" HorizontalAlignment="Left" Margin="10,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="93" Width="202"/>
         </Grid>
 
 
